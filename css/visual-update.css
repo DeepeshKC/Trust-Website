@@ -1,0 +1,20 @@
+/* Load after style.css. Scoped overrides for the approved split hero. */
+:root { --bsrg-ivory:#f7f2e9; --bsrg-maroon:#702d38; --bsrg-gold:#b69a61; }
+.hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; min-height:650px; background:var(--bsrg-ivory); color:var(--bsrg-maroon); padding:clamp(36px,6vw,88px) max(24px,calc((100vw - 1180px)/2)); gap:clamp(24px,5vw,72px); }
+.hero .hero-overlay { display:none; }
+.hero .hero-content { grid-column:1; grid-row:1; width:100%; max-width:570px; margin:0; padding:0; position:relative; z-index:1; text-align:left; }
+.hero .hero-image { grid-column:2; grid-row:1; position:relative; inset:auto; width:100%; height:clamp(440px,46vw,620px); border-radius:18px; background-position:center 48%; background-size:cover; box-shadow:0 22px 55px rgba(53,35,31,.13); }
+.hero h1 { color:var(--bsrg-maroon); font-size:clamp(2.6rem,4.2vw,4.9rem); line-height:1.12; max-width:650px; }
+.hero .eyebrow { color:#92703d; letter-spacing:.16em; }
+.hero .hero-copy { color:#514b45; max-width:540px; line-height:1.8; }
+.hero .button { background:var(--bsrg-maroon); color:white; border-color:var(--bsrg-maroon); }
+.hero .button:hover { background:#52212a; color:white; }
+.intro { background:#fffaf3; }
+.chairperson-feature { max-width:1180px; margin:42px auto 0; padding:0 24px; display:flex; gap:24px; align-items:center; }
+.chairperson-feature img { width:200px; height:240px; object-fit:cover; object-position:center 35%; border-radius:12px; }
+.chairperson-feature figcaption { display:flex; flex-direction:column; gap:6px; color:var(--bsrg-maroon); }
+.chairperson-feature figcaption strong { font-size:1.35rem; }
+.chairperson-feature figcaption span { color:#625b53; }
+.activity-card img { object-fit:cover; }
+@media (max-width:800px) { .hero { grid-template-columns:1fr; min-height:auto; padding:48px 24px 64px; gap:30px; } .hero .hero-content { grid-column:1; grid-row:1; } .hero .hero-image { grid-column:1; grid-row:2; height:440px; } .hero h1 { font-size:clamp(2.3rem,8vw,3.7rem); } }
+@media (max-width:480px) { .hero .hero-image { height:360px; } .chairperson-feature { flex-direction:column; align-items:flex-start; } .chairperson-feature img { width:100%; height:340px; } }

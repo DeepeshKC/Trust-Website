@@ -21,8 +21,8 @@ const businessConfig = {
   contactTitle: "We would be pleased to hear from you.",
   contactDescription: "Contact the Trust for general enquiries, activity information or accommodation updates.",
   address: "Nagarban Marga, Bharatpur Metropolitan City–3, Chitwan, Nepal",
-  phone: "",
-  email: "",
+ phone: "+977 985-5059017",
+email: "bsrgstrust@gmail.com",
 
   footerText: "A nonprofit organization serving the community in Bharatpur, Nepal.",
   socialMedia: {

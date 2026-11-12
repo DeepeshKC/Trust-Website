@@ -61,3 +61,24 @@
   .chairperson-feature img { width:105px; height:135px; }
   .chairperson-feature figcaption strong { font-size:1.25rem; }
 }
+/* Religious activity: show complete photograph */
+#activities .activity-card:nth-child(2) img {
+  height: 300px;
+  object-fit: contain;
+  object-position: center;
+  background-color: #f2ebdf;
+}
+
+/* Other activity photographs */
+#activities .activity-card:nth-child(1) img,
+#activities .activity-card:nth-child(3) img {
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 680px) {
+  #activities .activity-card img {
+    height: 280px;
+  }
+}

@@ -74,3 +74,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// Make phone number clickable
+const phoneElement = document.getElementById("contact-phone");
+
+if (phoneElement) {
+  phoneElement.innerHTML =
+    '<a href="tel:+9779855059017">+977 985-5059017</a>';
+}
+
+// Make email address clickable
+const emailElement = document.getElementById("contact-email");
+
+if (emailElement) {
+  emailElement.innerHTML =
+    '<a href="mailto:bsrgstrust@gmail.com">bsrgstrust@gmail.com</a>';
+}
+
+// Update contact button
+const contactButton = document.getElementById("contact-button");
+
+if (contactButton) {
+  contactButton.href = "mailto:bsrgstrust@gmail.com";
+}

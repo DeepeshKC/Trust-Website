@@ -1,20 +1,63 @@
-/* Load after style.css. Scoped overrides for the approved split hero. */
-:root { --bsrg-ivory:#f7f2e9; --bsrg-maroon:#702d38; --bsrg-gold:#b69a61; }
-.hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; min-height:650px; background:var(--bsrg-ivory); color:var(--bsrg-maroon); padding:clamp(36px,6vw,88px) max(24px,calc((100vw - 1180px)/2)); gap:clamp(24px,5vw,72px); }
-.hero .hero-overlay { display:none; }
-.hero .hero-content { grid-column:1; grid-row:1; width:100%; max-width:570px; margin:0; padding:0; position:relative; z-index:1; text-align:left; }
-.hero .hero-image { grid-column:2; grid-row:1; position:relative; inset:auto; width:100%; height:clamp(440px,46vw,620px); border-radius:18px; background-position:center 48%; background-size:cover; box-shadow:0 22px 55px rgba(53,35,31,.13); }
-.hero h1 { color:var(--bsrg-maroon); font-size:clamp(2.6rem,4.2vw,4.9rem); line-height:1.12; max-width:650px; }
-.hero .eyebrow { color:#92703d; letter-spacing:.16em; }
-.hero .hero-copy { color:#514b45; max-width:540px; line-height:1.8; }
-.hero .button { background:var(--bsrg-maroon); color:white; border-color:var(--bsrg-maroon); }
-.hero .button:hover { background:#52212a; color:white; }
-.intro { background:#fffaf3; }
-.chairperson-feature { max-width:1180px; margin:42px auto 0; padding:0 24px; display:flex; gap:24px; align-items:center; }
-.chairperson-feature img { width:200px; height:240px; object-fit:cover; object-position:center 35%; border-radius:12px; }
+/* BSRG Trust visual refinement — load AFTER /css/style.css */
+:root { --bsrg-ivory:#f7f2e9; --bsrg-maroon:#702d38; --bsrg-gold:#9a753f; --bsrg-beige:#f2ebdf; --bsrg-ink:#302a28; }
+/* Section rhythm and legible contrast */
+#home.hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; min-height:620px; background:var(--bsrg-ivory); color:var(--bsrg-ink); padding:clamp(48px,6vw,86px) max(24px,calc((100vw - 1160px)/2)); gap:clamp(30px,5vw,70px); }
+#home .hero-overlay { display:none; }
+#home .hero-content { grid-column:1; grid-row:1; width:100%; max-width:570px; margin:0; padding:0; position:relative; z-index:1; text-align:left; }
+#home .hero-image { grid-column:2; grid-row:1; position:relative; inset:auto; width:100%; height:clamp(390px,43vw,550px); border-radius:14px; background-position:center 45%; background-size:cover; box-shadow:0 18px 45px rgba(53,35,31,.13); }
+#home h1 { color:var(--bsrg-maroon); font-size:clamp(2.5rem,4.1vw,4.5rem); line-height:1.13; max-width:650px; }
+#home .eyebrow { color:#85612e; }
+#home .hero-copy { color:#514b45; max-width:540px; line-height:1.8; }
+#home .button { background:var(--bsrg-maroon); color:#fff; }
+#home .button:hover { background:#52212a; }
+/* Distinct bands; avoid adjacent cream-on-cream sections */
+#about.intro { background:#fff; }
+#activities.activities { background:var(--bsrg-beige); }
+#accommodation.stay-section { background:#fff; }
+.values { background:#481b29; color:#fff; }
+.values h2 { color:#fff; }
+#contact.contact { background:var(--bsrg-ivory); }
+#contact .contact-card { background:#fff; border-color:#e7dfd4; }
+#about, #activities, #accommodation, .values, #contact { scroll-margin-top:82px; }
+/* About section and Chairperson portrait */
+#about .intro-grid { align-items:start; }
+.chairperson-feature { width:min(1160px,calc(100% - 48px)); max-width:1160px; margin:44px auto 0; padding:28px 0 0; border-top:1px solid #e7dfd4; display:flex; gap:28px; align-items:center; }
+.chairperson-feature img { flex:none; width:190px; height:235px; object-fit:cover; object-position:center 30%; border-radius:10px; }
 .chairperson-feature figcaption { display:flex; flex-direction:column; gap:6px; color:var(--bsrg-maroon); }
-.chairperson-feature figcaption strong { font-size:1.35rem; }
+.chairperson-feature figcaption strong { font-family:var(--serif); font-size:1.5rem; line-height:1.3; }
 .chairperson-feature figcaption span { color:#625b53; }
-.activity-card img { object-fit:cover; }
-@media (max-width:800px) { .hero { grid-template-columns:1fr; min-height:auto; padding:48px 24px 64px; gap:30px; } .hero .hero-content { grid-column:1; grid-row:1; } .hero .hero-image { grid-column:1; grid-row:2; height:440px; } .hero h1 { font-size:clamp(2.3rem,8vw,3.7rem); } }
-@media (max-width:480px) { .hero .hero-image { height:360px; } .chairperson-feature { flex-direction:column; align-items:flex-start; } .chairperson-feature img { width:100%; height:340px; } }
+/* Card images: consistent sizes and safe subject framing */
+#activities .activity-grid { align-items:stretch; }
+#activities .activity-card { overflow:hidden; background:#fff; border:1px solid #e7dfd4; border-radius:8px; }
+#activities .activity-card img { width:100%; height:245px; aspect-ratio:4/3; object-fit:cover; object-position:center; }
+#activities .activity-card:nth-child(2) img { object-position:center 36%; }
+#activities .activity-body { padding:25px 26px 30px; }
+/* Building image is exterior, not a room photo */
+#accommodation .stay-grid { gap:clamp(30px,5vw,72px); }
+#accommodation .stay-photo { min-height:420px; border-radius:12px; background-position:center 45%; background-size:cover; }
+/* Comfortable visual pacing */
+#about.section-pad, #activities.section-pad, #accommodation.section-pad, .values.section-pad, #contact.section-pad { padding-top:90px; padding-bottom:90px; }
+@media(max-width:900px) {
+  #home.hero { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:28px; min-height:0; padding:52px 24px; }
+  #home .hero-image { height:420px; }
+  #home h1 { font-size:clamp(2.2rem,4.6vw,3.5rem); }
+  #activities .activity-card img { height:195px; }
+  #accommodation .stay-photo { min-height:340px; }
+}
+@media(max-width:680px) {
+  #home.hero { grid-template-columns:minmax(0,1fr); padding:44px 18px 60px; gap:28px; }
+  #home .hero-content { grid-column:1; grid-row:1; }
+  #home .hero-image { grid-column:1; grid-row:2; height:clamp(270px,80vw,420px); background-position:center 45%; }
+  #home h1 { font-size:clamp(2.3rem,9vw,3.5rem); }
+  #home .hero-copy { font-size:15px; }
+  #about.section-pad, #activities.section-pad, #accommodation.section-pad, .values.section-pad, #contact.section-pad { padding-top:66px; padding-bottom:66px; }
+  .chairperson-feature { width:min(100% - 36px,560px); gap:18px; margin-top:30px; }
+  .chairperson-feature img { width:120px; height:150px; }
+  #activities .activity-card img { height:230px; }
+  #accommodation .stay-photo { min-height:300px; }
+}
+@media(max-width:420px) {
+  .chairperson-feature { align-items:flex-start; }
+  .chairperson-feature img { width:105px; height:135px; }
+  .chairperson-feature figcaption strong { font-size:1.25rem; }
+}

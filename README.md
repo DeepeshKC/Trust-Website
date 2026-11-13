@@ -49,3 +49,32 @@ Open `index.html` in a browser. For best results, use a local development server
 - Do not publish unverified claims, room counts, prices, opening hours, contact details or services.
 - The contact button remains hidden until an email address is added in `js/config.js`.
 - This is a static website; it does not include a booking system, online payment, or server-side contact form.
+
+
+## Website Information
+
+**Website:** Baa Aama Ghar  
+**Organization:** BSRG Trust  
+**Location:** Bharatpur–3, Chitwan, Nepal
+
+This repository contains the official website for Baa Aama Ghar,
+operated by Buddhiman Smriti Ramhari Gangadevi Shrestha
+Philanthropic Trust.
+
+The website includes information about elderly day care,
+religious and spiritual activities, and accommodation for visitors.
+
+### Deployment
+
+The website is hosted using Cloudflare Workers.
+
+Planned domain: https://baa-aama-ghar.com.np
+
+### Website Features
+
+- Responsive website design
+- English-language content
+- Google Maps integration
+- Contact information
+- Social-sharing metadata
+

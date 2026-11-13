@@ -1,9 +1,9 @@
 const businessConfig = {
   companyName: "BSRG Trust",
-  pageTitle: "BSRG Trust | Care, Community & Hospitality",
-  metaDescription: "Learn about BSRG Trust in Bharatpur, Nepal, and its work in elderly day care, religious activities and affordable accommodation.",
-  ogTitle: "BSRG Trust | Care, Community & Hospitality",
-  ogDescription: "A nonprofit trust supporting elderly care, religious activities and affordable accommodation in Bharatpur, Nepal.",
+  pageTitle: "Baa Aama Ghar | BSRG Trust – Bharatpur, Chitwan",
+  metaDescription: "Discover Baa Aama Ghar in Bharatpur, Chitwan, operated by BSRG Trust. Supporting elderly day care, religious activities and affordable visitor accommodation.",
+  ogTitle: "Baa Aama Ghar | BSRG Trust – Bharatpur, Chitwan",
+  ogDescription: "Baa Aama Ghar is home to BSRG Trust in Bharatpur, Chitwan, supporting elderly care, spiritual activities and affordable visitor accommodation.",
   ogImage: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=85",
   favicon: "/images/favicon.svg",
 

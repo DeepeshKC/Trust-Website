@@ -1,8 +1,8 @@
 const businessConfig = {
   companyName: "Baa Aama Ghar",
-  pageTitle: "Baa Aama Ghar | BSRG Trust – Bharatpur, Chitwan",
-  metaDescription: "Discover Baa Aama Ghar in Bharatpur, Chitwan. Affordable accommodation, elderly day care, companionship and spiritual well-being, operated by BSRG Trust.",
-  ogTitle: "Baa Aama Ghar | BSRG Trust – Bharatpur, Chitwan",
+  pageTitle: "Baa Aama Ghar | BSRGS Trust – Bharatpur, Chitwan",
+  metaDescription: "Discover Baa Aama Ghar in Bharatpur, Chitwan. Affordable accommodation, elderly day care, companionship and spiritual well-being, operated by BSRGS Trust.",
+  ogTitle: "Baa Aama Ghar | BSRGS Trust – Bharatpur, Chitwan",
   ogDescription: "A peaceful stay and a feeling of home in Bharatpur, Chitwan. Accommodation, elderly day care and spiritual well-being.",
   ogImage: "https://trust-website.deepeshkc.workers.dev/images/baa-aama-ghar-social.png",
   favicon: "/images/favicon.svg",

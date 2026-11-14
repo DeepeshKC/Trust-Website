@@ -18,6 +18,6 @@ const businessConfig = {
   address: "Nagarban Marga, Bharatpur Metropolitan City–3, Chitwan, Nepal",
   phone: "",
   email: "bsrgstrust@gmail.com",
-  footerText: "Operated by Buddhi Man Smriti Ramhari Gangadevi Shrestha Paropakar Trust (BSRG Trust), a nonprofit organization.",
+  footerText: "Buddhi Man Smriti Ramhari Gangadevi Shrestha Paropakar Trust",
   socialMedia: { facebook: "", instagram: "", youtube: "" }
 };

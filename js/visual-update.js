@@ -13,9 +13,4 @@ document.addEventListener('DOMContentLoaded', () => {
     figure.innerHTML = '<img src="/images/1.jpeg" alt="Ramhari Shrestha standing in the Trust courtyard" loading="lazy"><figcaption><strong>Ramhari Shrestha</strong><span>Chairperson</span></figcaption>';
     about.insertAdjacentElement('afterend', figure);
   }
-  const stayPhoto = document.querySelector('.stay-photo');
-  if (stayPhoto) {
-    stayPhoto.style.backgroundImage = "url('/images/3.jpeg')";
-    stayPhoto.setAttribute('aria-label', 'Exterior of Baa Aama Ghar building');
-  }
 });

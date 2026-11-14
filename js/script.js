@@ -43,14 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
     heroImage.style.backgroundImage = `url("${config.heroImage}")`;
   }
 
-  const phone = document.getElementById("contact-phone");
-  if (phone) phone.textContent = config.phone ? `Phone: ${config.phone}` : "Phone number to be added";
   const email = document.getElementById("contact-email");
-  if (email) email.textContent = config.email ? `Email: ${config.email}` : "Email address to be added";
+  if (email && config.email) {
+    email.textContent = config.email;
+    email.href = `mailto:${config.email}`;
+  }
   const contactButton = document.getElementById("contact-button");
   if (contactButton) {
     if (config.email) {
-      contactButton.href = `mailto:${config.email}`;
+      const subject = "Accommodation Enquiry – Baa Aama Ghar";
+      const body = "Hello Baa Aama Ghar,\\n\\nI would like to enquire about accommodation.\\n\\nCheck-in date: \\nCheck-out date: \\nNumber of guests: \\nPreferred room type (if any): \\n\\nPlease share room availability and rates.\\n\\nThank you.";
+      contactButton.href = `mailto:${config.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       contactButton.hidden = false;
     } else {
       contactButton.hidden = true;

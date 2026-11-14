@@ -16,7 +16,9 @@ const businessConfig = {
   contactTitle: "We'd Be Happy to Welcome You",
   contactDescription: "Planning a visit or looking for a peaceful place to stay in Bharatpur? Whether you're enquiring about accommodation, elderly day care, or visiting Baa Aama Ghar, we're here to help.",
   address: "Nagarban Marga, Bharatpur Metropolitan City–3, Chitwan, Nepal",
-  phone: "",
+  phone: "", // TODO: Confirm accommodation phone in international format, e.g. +977XXXXXXXXXX
+  generalPhone: "", // TODO: Optional second phone number
+  whatsappNumber: "", // TODO: WhatsApp number in international format; leave blank until confirmed
   email: "bsrgstrust@gmail.com",
   footerText: "Buddhi Man Smriti Ramhari Gangadevi Shrestha Paropakar Trust",
   socialMedia: { facebook: "", instagram: "", youtube: "" }

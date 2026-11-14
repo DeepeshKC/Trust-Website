@@ -18,7 +18,7 @@ const businessConfig = {
   address: "Nagarban Marga, Bharatpur Metropolitan City–3, Chitwan, Nepal",
   phone: "", // TODO: Confirm accommodation phone in international format, e.g. +977XXXXXXXXXX
   generalPhone: "", // TODO: Optional second phone number
-  whatsappNumber: "", // TODO: WhatsApp number in international format; leave blank until confirmed
+  whatsappNumber: "+9779843202087", // TODO: WhatsApp number in international format; leave blank until confirmed
   email: "bsrgstrust@gmail.com",
   footerText: "Buddhi Man Smriti Ramhari Gangadevi Shrestha Paropakar Trust",
   socialMedia: { facebook: "", instagram: "", youtube: "" }

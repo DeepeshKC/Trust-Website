@@ -185,3 +185,14 @@ body { color:#342c29; }
   #activities .care-visual img { height:330px; min-height:0; }
   #activities .care-visual > div { min-height:0; }
 }
+
+/* Contact channel placeholders: inactive until verified numbers are configured */
+.contact-action-row { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:18px; }
+.contact-wa-placeholder,.contact-wa-link { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:45px; padding:11px 16px; border-radius:4px; font-size:14px; font-weight:600; text-decoration:none; }
+.contact-wa-placeholder { background:#e8e4df; color:#726b65; cursor:default; }
+.contact-wa-link { background:#237b50; color:#fff; }
+.contact-wa-link:hover { background:#17623e; color:#fff; }
+.floating-whatsapp { position:fixed; bottom:22px; right:22px; z-index:50; width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#237b50; color:#fff; box-shadow:0 5px 18px rgba(0,0,0,.2); text-decoration:none; }
+.floating-whatsapp.is-pending { background:#9a958f; opacity:.72; cursor:default; }
+.floating-whatsapp:not(.is-pending):hover { background:#17623e; color:#fff; }
+@media(max-width:680px) { .floating-whatsapp { right:16px; bottom:16px; width:48px; height:48px; } .contact-action-row { align-items:stretch; } }

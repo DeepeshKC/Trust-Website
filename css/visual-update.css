@@ -128,3 +128,35 @@
     height: 300px;
   }
 }
+
+
+/* Approved homepage refinements */
+#home .hero-actions { display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+#home .hero-secondary-link { color:var(--bsrg-maroon); font-weight:700; text-decoration:none; border-bottom:1px solid var(--bsrg-gold); }
+#home .hero-operator { margin:20px 0 0; font-size:12px; color:#665b55; letter-spacing:.03em; }
+#home .hero-copy { margin-bottom:28px; }
+#about .intro-text p { margin-bottom:16px; }
+#accommodation .stay-copy > p { margin-bottom:14px; }
+#accommodation .stay-copy .button { margin-top:16px; }
+.guest-guidelines { margin-top:30px; padding:22px 24px; border-left:3px solid var(--bsrg-gold); background:#f7f2e9; border-radius:0 8px 8px 0; }
+.guest-guidelines h3 { font-family:var(--serif); color:var(--bsrg-maroon); margin:0 0 10px; font-size:22px; }
+.guest-guidelines p, .guest-guidelines li { font-size:14px; color:#625b53; line-height:1.7; }
+.guest-guidelines p:last-child { margin-bottom:0; }
+.guest-guidelines ul { padding-left:20px; }
+#activities .activity-introduction { max-width:780px; margin:0 auto 36px; color:#625b53; text-align:center; }
+#activities .activity-grid .activity-card { display:flex; min-height:210px; }
+#activities .activity-grid .activity-body { padding:30px; }
+#activities .activity-grid .activity-card h3 { font-size:22px; }
+.values .values-heading { max-width:800px; }
+.values .values-heading h2 { color:white; }
+.values .values-heading > p:last-child { color:rgba(255,255,255,.8); }
+.values-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; text-align:left; }
+.value-card { padding:28px 30px; border:1px solid rgba(255,255,255,.22); background:rgba(255,255,255,.055); border-radius:8px; }
+.value-card h3 { font-family:var(--serif); color:#f3dfbe; margin:0 0 10px; font-size:23px; }
+.value-card p { color:rgba(255,255,255,.8); margin:0; font-size:14px; }
+.contact-operator { font-size:12px; color:#756d68; margin-top:20px; }
+@media(max-width:680px) {
+  .values-grid { grid-template-columns:1fr; }
+  .value-card { padding:23px; }
+  #home .hero-actions { align-items:flex-start; flex-direction:column; gap:18px; }
+}

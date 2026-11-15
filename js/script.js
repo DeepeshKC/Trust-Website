@@ -11,7 +11,7 @@ const businessConfig = {
   heroTitle: "A Peaceful Stay. A Feeling of Home.",
   heroDescription: "A welcoming space for comfortable accommodation, meaningful companionship, and spiritual well-being in the heart of Bharatpur.",
   heroButtonText: "Enquire About a Stay",
-  heroImage: "/images/3.jpeg",
+  heroImage: "/images/3.webp",
   aboutTitle: "A Place of Comfort, Connection, and Belonging",
   aboutDescription: "Located in Bharatpur, Chitwan, Baa Aama Ghar (बा आमा घर) is a welcoming space dedicated to comfort, companionship, and spiritual well-being.",
   contactTitle: "We'd Be Happy to Welcome You",
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hero = document.querySelector('.hero');
   const heroImage = hero?.querySelector('.hero-image');
   if (heroImage) {
-    heroImage.style.backgroundImage = "url('/images/3.jpeg')";
+    heroImage.style.backgroundImage = "url('/images/3.webp')";
     heroImage.setAttribute('aria-label', 'Baa Aama Ghar building and courtyard in Bharatpur');
   }
   const about = document.querySelector('.intro-grid');

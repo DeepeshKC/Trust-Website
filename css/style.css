@@ -128,7 +128,7 @@ h2 { font-size:clamp(2rem,3vw,2.85rem); line-height:1.23; }
 #home.hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; min-height:0; background:var(--bsrg-ivory); color:var(--bsrg-ink); padding:clamp(54px,6vw,86px) max(32px,calc((100vw - 1160px)/2)); gap:clamp(32px,5vw,76px); }
 #home .hero-overlay { display:none; }
 #home .hero-content { grid-column:1; grid-row:1; width:100%; max-width:570px; margin:0; padding:0; text-align:left; position:relative; z-index:1; }
-#home .hero-image { grid-column:2; grid-row:1; position:relative; inset:auto; width:100%; height:clamp(360px,40vw,530px); border-radius:12px; background:url('/images/3.jpeg') center 45%/cover no-repeat; box-shadow:0 14px 38px rgba(53,35,31,.12); }
+#home .hero-image { grid-column:2; grid-row:1; position:relative; inset:auto; width:100%; height:clamp(360px,40vw,530px); border-radius:12px; background:url('/images/3.webp') center 45%/cover no-repeat; box-shadow:0 14px 38px rgba(53,35,31,.12); }
 #home h1 { color:var(--bsrg-maroon); font-size:clamp(2.5rem,4.1vw,4.25rem); line-height:1.14; margin-bottom:22px; }
 #home .eyebrow { color:#85612e; }
 #home .hero-copy { color:#514b45; max-width:540px; font-size:17px; line-height:1.8; margin-bottom:28px; }
@@ -149,7 +149,7 @@ h2 { font-size:clamp(2rem,3vw,2.85rem); line-height:1.23; }
 /* Accommodation: top aligned, readable text, restrained guidelines */
 #accommodation.stay-section { background:#faf7f1; }
 #accommodation .stay-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:start; gap:clamp(32px,5vw,72px); }
-#accommodation .stay-photo { min-height:clamp(400px,43vw,530px); background:url('/images/3.jpeg') center 43%/cover no-repeat; border-radius:10px; }
+#accommodation .stay-photo { min-height:clamp(400px,43vw,530px); background:url('/images/3.webp') center 43%/cover no-repeat; border-radius:10px; }
 #accommodation .stay-copy h2 { margin-bottom:22px; }
 #accommodation .stay-copy > p:not(.eyebrow) { font-size:16px; line-height:1.75; color:#514b45; margin:0 0 16px; }
 #accommodation .stay-copy .button { margin-top:8px; }

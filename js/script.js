@@ -1,3 +1,32 @@
+/* ===== SITE CONFIGURATION ===== */
+const businessConfig = {
+  companyName: "Baa Aama Ghar",
+  pageTitle: "Baa Aama Ghar | BSRGS Trust – Bharatpur, Chitwan",
+  metaDescription: "Discover Baa Aama Ghar in Bharatpur, Chitwan. Affordable accommodation, elderly day care, companionship and spiritual well-being, operated by BSRGS Trust.",
+  ogTitle: "Baa Aama Ghar | BSRGS Trust – Bharatpur, Chitwan",
+  ogDescription: "A peaceful stay and a feeling of home in Bharatpur, Chitwan. Accommodation, elderly day care and spiritual well-being.",
+  ogImage: "https://trust-website.deepeshkc.workers.dev/images/baa-aama-ghar-social.png",
+  favicon: "/images/favicon.svg",
+  heroLabel: "BAA AAMA GHAR · BHARATPUR, CHITWAN",
+  heroTitle: "A Peaceful Stay. A Feeling of Home.",
+  heroDescription: "A welcoming space for comfortable accommodation, meaningful companionship, and spiritual well-being in the heart of Bharatpur.",
+  heroButtonText: "Enquire About a Stay",
+  heroImage: "/images/3.jpeg",
+  aboutTitle: "A Place of Comfort, Connection, and Belonging",
+  aboutDescription: "Located in Bharatpur, Chitwan, Baa Aama Ghar (बा आमा घर) is a welcoming space dedicated to comfort, companionship, and spiritual well-being.",
+  contactTitle: "We'd Be Happy to Welcome You",
+  contactDescription: "Planning a visit or looking for a peaceful place to stay in Bharatpur? Whether you're enquiring about accommodation, elderly day care, or visiting Baa Aama Ghar, we're here to help.",
+  address: "Nagarban Marga, Bharatpur Metropolitan City–3, Chitwan, Nepal",
+  phone: "+9779855059017", // Accommodation enquiries
+  generalPhone: "", // TODO: Optional second phone number
+  whatsappNumber: "+9779855059017", // WhatsApp enquiries
+  email: "bsrgstrust@gmail.com",
+  footerText: "Buddhi Man Smriti Ramhari Gangadevi Shrestha Paropakar Trust",
+  socialMedia: { facebook: "", instagram: "", youtube: "" }
+};
+
+
+/* ===== MAIN INTERACTIONS ===== */
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof businessConfig === "undefined") {
     console.error("Website configuration was not loaded. Check js/config.js.");
@@ -75,5 +104,71 @@ document.addEventListener("DOMContentLoaded", () => {
         menuToggle.setAttribute("aria-label", "Open navigation");
       });
     });
+  }
+});
+
+
+/* ===== VISUAL ENHANCEMENTS ===== */
+/* BSRG visual enhancement: preserves existing IDs and config behavior. */
+document.addEventListener('DOMContentLoaded', () => {
+  const hero = document.querySelector('.hero');
+  const heroImage = hero?.querySelector('.hero-image');
+  if (heroImage) {
+    heroImage.style.backgroundImage = "url('/images/3.jpeg')";
+    heroImage.setAttribute('aria-label', 'Baa Aama Ghar building and courtyard in Bharatpur');
+  }
+  const about = document.querySelector('.intro-grid');
+  if (about && !document.querySelector('.chairperson-feature')) {
+    const figure = document.createElement('figure');
+    figure.className = 'chairperson-feature';
+    figure.innerHTML = '<img src="/images/1.jpeg" alt="Ramhari Shrestha standing in the Trust courtyard" loading="lazy"><figcaption><strong>Ramhari Shrestha</strong><span>Chairperson</span></figcaption>';
+    about.insertAdjacentElement('afterend', figure);
+  }
+});
+
+
+/* ===== CONTACT & WHATSAPP ===== */
+// Contact and WhatsApp links use the numbers configured above.
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof businessConfig === "undefined") return;
+  const config = businessConfig;
+  const digits = (value) => String(value || "").replace(/\D/g, "");
+  const valid = (value) => /^\+?[1-9]\d{7,14}$/.test(String(value || "").replace(/[\s()-]/g, ""));
+  const phone = (id, number) => {
+    const el = document.getElementById(id);
+    if (!el || !valid(number)) return;
+    const a = document.createElement("a");
+    a.href = "tel:+" + digits(number);
+    a.textContent = number;
+    el.replaceWith(a);
+    a.id = id;
+  };
+  phone("contact-phone", config.phone);
+  phone("general-phone", config.generalPhone);
+  if (!valid(config.whatsappNumber)) return;
+  const message = "Hello Baa Aama Ghar, I would like to enquire about accommodation.\nCheck-in date: \nCheck-out date: \nNumber of guests: \nPlease share availability and rates. Thank you.";
+  const url = "https://wa.me/" + digits(config.whatsappNumber) + "?text=" + encodeURIComponent(message);
+  const action = document.getElementById("whatsapp-action");
+  if (action) {
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.className = "contact-wa-link";
+    link.innerHTML = action.innerHTML;
+    link.querySelector("span").textContent = "Enquire on WhatsApp";
+    action.replaceWith(link);
+  }
+  const floating = document.getElementById("floating-whatsapp");
+  if (floating) {
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.className = "floating-whatsapp";
+    link.setAttribute("aria-label", "Enquire on WhatsApp");
+    link.title = "Enquire on WhatsApp";
+    link.innerHTML = floating.innerHTML;
+    floating.replaceWith(link);
   }
 });

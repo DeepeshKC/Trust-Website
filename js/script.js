@@ -17,8 +17,8 @@ const businessConfig = {
   contactTitle: "We'd Be Happy to Welcome You",
   contactDescription: "Planning a visit or looking for a peaceful place to stay in Bharatpur? Whether you're enquiring about accommodation, elderly day care, or visiting Baa Aama Ghar, we're here to help.",
   address: "Nagarban Marga, Bharatpur Metropolitan City–3, Chitwan, Nepal",
-  phone: "+97756512513", // Accommodation landline
-  generalPhone: "+97756512513", // General enquiries landline
+  phone: "+97756512513", // Accommodation landline: local 056-512513
+  generalPhone: "+97756512513", // General enquiries landline: local 056-512513
   whatsappNumber: "+9779855059017", // WhatsApp enquiries
   email: "bsrgstrust@gmail.com",
   footerText: "Buddhi Man Smriti Ramhari Gangadevi Shrestha Paropakar Trust",
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!el || !valid(number)) return;
     const a = document.createElement("a");
     a.href = "tel:+" + digits(number);
-    a.textContent = number;
+    a.textContent = digits(number) === "97756512513" ? "056-512513" : number;
     el.replaceWith(a);
     a.id = id;
   };
@@ -428,7 +428,7 @@ const siteTranslations = [
   },
   {
     "en": "Operated by BSRGS Trust",
-    "ne": "BSRGS Trust द्वारा सञ्चालित"
+    "ne": "बुद्धि मान स्मृति रामहरि गड्गादेवी श्रेष्ठ परोपकार ट्रस्टद्वारा सञ्चालित"
   }
 ];
 const siteAttributeTranslations = [
@@ -511,8 +511,23 @@ function setSiteLanguage(language) {
     button.classList.toggle('active', active);
   });
   const ne = lang === 'ne';
-  const title = ne ? 'बा आमा घर | BSRGS Trust – भरतपुर, चितवन' : businessConfig.pageTitle;
-  const desc = ne ? 'भरतपुर, चितवनस्थित बा आमा घरमा सुलभ आवास, ज्येष्ठ नागरिक दिवा सेवा, आत्मीय साथ र आध्यात्मिक शान्तिको वातावरण। BSRGS Trust द्वारा सञ्चालित।' : businessConfig.metaDescription;
+  const trustNameEn = 'Buddhi Man Smriti Ramhari Gangadevi Shrestha Paropakar Trust';
+  const trustNameNe = 'बुद्धि मान स्मृति रामहरि गड्गादेवी श्रेष्ठ परोपकार ट्रस्ट';
+  const translatedFields = {
+    'company-name': ['Baa Aama Ghar', 'बा आमा घर'],
+    'footer-company': ['Baa Aama Ghar', 'बा आमा घर'],
+    'footer-copyright-name': ['Baa Aama Ghar', 'बा आमा घर'],
+    'footer-text': [trustNameEn, trustNameNe],
+    'about-trust-name': [trustNameEn + ' (BSRGS Trust)', trustNameNe],
+    'footer-rights': ['. All rights reserved.', '। सर्वाधिकार सुरक्षित।'],
+    'footer-brand-mark': ['B', 'बा']
+  };
+  Object.entries(translatedFields).forEach(([id, values]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = values[ne ? 1 : 0];
+  });
+  const title = ne ? 'बा आमा घर | बुद्धि मान स्मृति रामहरि गड्गादेवी श्रेष्ठ परोपकार ट्रस्ट – भरतपुर, चितवन' : businessConfig.pageTitle;
+  const desc = ne ? 'भरतपुर, चितवनस्थित बा आमा घरमा सुलभ आवास, ज्येष्ठ नागरिक दिवा सेवा, आत्मीय साथ र आध्यात्मिक शान्तिको वातावरण। बुद्धि मान स्मृति रामहरि गड्गादेवी श्रेष्ठ परोपकार ट्रस्टद्वारा सञ्चालित।' : businessConfig.metaDescription;
   document.title = title;
   document.querySelector('meta[name="description"]')?.setAttribute('content',desc);
   document.getElementById('og-title')?.setAttribute('content',title);

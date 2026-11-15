@@ -313,3 +313,16 @@ body { color:#342c29; }
 .floating-whatsapp.is-pending { background:#9a958f; opacity:.72; cursor:default; }
 .floating-whatsapp:not(.is-pending):hover { background:#17623e; color:#fff; }
 @media(max-width:680px) { .floating-whatsapp { right:16px; bottom:16px; width:48px; height:48px; } .contact-action-row { align-items:stretch; } }
+
+/* ===== LANGUAGE SWITCHER ===== */
+.header-inner { gap: 14px; }
+.language-switch { display:flex; align-items:center; gap:3px; flex-shrink:0; border:1px solid rgba(112,45,57,.22); padding:3px; border-radius:5px; background:#fffaf4; }
+.language-option { font:600 12px/1.2 'DM Sans',sans-serif; border:0; background:transparent; color:#702d39; cursor:pointer; padding:8px 10px; border-radius:3px; white-space:nowrap; }
+.language-option.active { background:#702d39; color:#fff; }
+.language-option:focus-visible { outline:2px solid #b58b55; outline-offset:2px; }
+html[lang="ne"] body { font-family: 'Noto Sans Devanagari','DM Sans',sans-serif; }
+html[lang="ne"] h1, html[lang="ne"] h2, html[lang="ne"] h3, html[lang="ne"] .care-visual strong, html[lang="ne"] .stay-photo-caption { font-family:'Noto Serif Devanagari','Noto Sans Devanagari',serif; line-height:1.45; }
+html[lang="ne"] .eyebrow { letter-spacing:.025em; }
+html[lang="ne"] .hero-copy,html[lang="ne"] .intro-text,html[lang="ne"] .stay-copy,html[lang="ne"] .contact-content { line-height:1.85; }
+@media(max-width:900px) { .header-inner { flex-wrap:wrap; } .language-switch { margin-left:auto; } }
+@media(max-width:680px) { .language-option { padding:7px 8px; font-size:12px; } }

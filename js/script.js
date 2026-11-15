@@ -17,8 +17,8 @@ const businessConfig = {
   contactTitle: "We'd Be Happy to Welcome You",
   contactDescription: "Planning a visit or looking for a peaceful place to stay in Bharatpur? Whether you're enquiring about accommodation, elderly day care, or visiting Baa Aama Ghar, we're here to help.",
   address: "Nagarban Marga, Bharatpur Metropolitan City–3, Chitwan, Nepal",
-  phone: "+9779855059017", // Accommodation enquiries
-  generalPhone: "", // TODO: Optional second phone number
+  phone: "+97756512513", // Accommodation landline
+  generalPhone: "+97756512513", // General enquiries landline
   whatsappNumber: "+9779855059017", // WhatsApp enquiries
   email: "bsrgstrust@gmail.com",
   footerText: "Buddhi Man Smriti Ramhari Gangadevi Shrestha Paropakar Trust",
@@ -150,25 +150,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const url = "https://wa.me/" + digits(config.whatsappNumber) + "?text=" + encodeURIComponent(message);
   const action = document.getElementById("whatsapp-action");
   if (action) {
-    const link = document.createElement("a");
-    link.href = url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.className = "contact-wa-link";
-    link.innerHTML = action.innerHTML;
-    link.querySelector("span").textContent = "Enquire on WhatsApp";
-    action.replaceWith(link);
+    action.href = url;
+    action.setAttribute("aria-label", "Enquire on WhatsApp");
+    const label = action.querySelector("span");
+    if (label) label.textContent = "Enquire on WhatsApp";
   }
   const floating = document.getElementById("floating-whatsapp");
   if (floating) {
-    const link = document.createElement("a");
-    link.href = url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.className = "floating-whatsapp";
-    link.setAttribute("aria-label", "Enquire on WhatsApp");
-    link.title = "Enquire on WhatsApp";
-    link.innerHTML = floating.innerHTML;
-    floating.replaceWith(link);
+    floating.href = url;
+    floating.setAttribute("aria-label", "Enquire on WhatsApp");
+    floating.title = "Enquire on WhatsApp";
   }
 });

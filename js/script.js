@@ -1,11 +1,11 @@
 /* ===== SITE CONFIGURATION ===== */
 const businessConfig = {
   companyName: "Baa Aama Ghar",
-  pageTitle: "Baa Aama Ghar | Accommodation & Elderly Day Care in Bharatpur",
+  pageTitle: "Baa Aama Ghar | Accommodation & Elderly Care in Chitwan",
   metaDescription: "Baa Aama Ghar in Bharatpur, Chitwan offers welcoming accommodation, elderly day care, companionship and spiritual activities. Contact us to enquire.",
-  ogTitle: "Baa Aama Ghar | Accommodation & Elderly Day Care in Bharatpur",
-  ogDescription: "A peaceful stay and a feeling of home in Bharatpur, Chitwan. Accommodation, elderly day care and spiritual well-being.",
-  ogImage: "https://trust-website.deepeshkc.workers.dev/images/baa-aama-ghar-social.png",
+  ogTitle: "Baa Aama Ghar | Accommodation & Elderly Care in Chitwan",
+  ogDescription: "Discover Baa Aama Ghar in Bharatpur, Chitwan, offering comfortable accommodation, elderly day care and spiritual activities.",
+  ogImage: "https://trust-website.deepeshkc.workers.dev/images/baa-aama-ghar-social.webp",
   favicon: "./images/favicon.svg",
   heroLabel: "BAA AAMA GHAR · BHARATPUR, CHITWAN",
   heroTitle: "A Peaceful Stay. A Feeling of Home.",
@@ -547,7 +547,7 @@ function setSiteLanguage(language) {
   document.title = title;
   document.querySelector('meta[name="description"]')?.setAttribute('content',desc);
   document.getElementById('og-title')?.setAttribute('content',title);
-  document.getElementById('og-description')?.setAttribute('content',desc);
+  document.getElementById('og-description')?.setAttribute('content', ne ? desc : businessConfig.ogDescription);
   document.getElementById('og-locale')?.setAttribute('content', ne ? 'ne_NP' : 'en_US');
   document.querySelector('meta[name="twitter:title"]')?.setAttribute('content',title);
   document.querySelector('meta[name="twitter:description"]')?.setAttribute('content',desc);

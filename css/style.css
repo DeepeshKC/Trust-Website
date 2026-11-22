@@ -32,7 +32,7 @@ a { color: inherit; }
 .menu-toggle span { display: block; width: 25px; height: 2px; background: var(--maroon); margin: 5px; }
 .hero { min-height: 660px; position: relative; display: flex; align-items: center; color: white; background: var(--maroon-deep); overflow: hidden; }
 .hero-image, .hero-overlay { position: absolute; inset: 0; }
-.hero-image { background: center/cover no-repeat; background-image: url("https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=2000&q=85"); }
+.hero-image { background: center/cover no-repeat; background-image: url("../images/3.webp"); }
 .hero-overlay { background: linear-gradient(90deg, rgba(39,18,25,.86), rgba(39,18,25,.60) 48%, rgba(39,18,25,.16)); }
 .hero-content { position: relative; z-index: 1; padding-top: 70px; padding-bottom: 70px; }
 .eyebrow { margin: 0 0 18px; color: #e7c99e; font-size: 11px; letter-spacing: .19em; font-weight: 700; }
@@ -62,7 +62,7 @@ h2 { font-family: var(--serif); font-weight: 600; color: var(--maroon-deep); fon
 .activity-body p { color: var(--muted); font-size: 14px; margin: 0; }
 .stay-section { background: var(--cream); }
 .stay-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: center; }
-.stay-photo { min-height: 440px; background: center/cover no-repeat url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85"); }
+.stay-photo { min-height: 440px; background: center/cover no-repeat url("../images/3.webp"); }
 .stay-copy h2 { margin-bottom: 22px; }
 .stay-copy > p:not(.eyebrow):not(.small-note) { color: var(--muted); }
 .text-link { display: inline-block; margin-top: 12px; color: var(--maroon); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
@@ -128,7 +128,7 @@ h2 { font-size:clamp(2rem,3vw,2.85rem); line-height:1.23; }
 #home.hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; min-height:0; background:var(--bsrg-ivory); color:var(--bsrg-ink); padding:clamp(54px,6vw,86px) max(32px,calc((100vw - 1160px)/2)); gap:clamp(32px,5vw,76px); }
 #home .hero-overlay { display:none; }
 #home .hero-content { grid-column:1; grid-row:1; width:100%; max-width:570px; margin:0; padding:0; text-align:left; position:relative; z-index:1; }
-#home .hero-image { grid-column:2; grid-row:1; position:relative; inset:auto; width:100%; height:clamp(360px,40vw,530px); border-radius:12px; background:url('/images/3.webp') center 45%/cover no-repeat; box-shadow:0 14px 38px rgba(53,35,31,.12); }
+#home .hero-image { grid-column:2; grid-row:1; position:relative; inset:auto; width:100%; height:clamp(360px,40vw,530px); border-radius:12px; background:url('../images/3.webp') center 45%/cover no-repeat; box-shadow:0 14px 38px rgba(53,35,31,.12); }
 #home h1 { color:var(--bsrg-maroon); font-size:clamp(2.5rem,4.1vw,4.25rem); line-height:1.14; margin-bottom:22px; }
 #home .eyebrow { color:#85612e; }
 #home .hero-copy { color:#514b45; max-width:540px; font-size:17px; line-height:1.8; margin-bottom:28px; }
@@ -149,7 +149,7 @@ h2 { font-size:clamp(2rem,3vw,2.85rem); line-height:1.23; }
 /* Accommodation: top aligned, readable text, restrained guidelines */
 #accommodation.stay-section { background:#faf7f1; }
 #accommodation .stay-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:start; gap:clamp(32px,5vw,72px); }
-#accommodation .stay-photo { min-height:clamp(400px,43vw,530px); background:url('/images/3.webp') center 43%/cover no-repeat; border-radius:10px; }
+#accommodation .stay-photo { min-height:clamp(400px,43vw,530px); background:url('../images/3.webp') center 43%/cover no-repeat; border-radius:10px; }
 #accommodation .stay-copy h2 { margin-bottom:22px; }
 #accommodation .stay-copy > p:not(.eyebrow) { font-size:16px; line-height:1.75; color:#514b45; margin:0 0 16px; }
 #accommodation .stay-copy .button { margin-top:8px; }
@@ -336,3 +336,6 @@ html[lang="ne"] .hero-copy,html[lang="ne"] .intro-text,html[lang="ne"] .stay-cop
 @media (max-width: 767px) {
   .menu-toggle { min-width: 44px; min-height: 44px; }
 }
+
+/* Accessibility: readable activity-card numbers on the pale card background. */
+#activities .activity-card .card-number { color: #75491e; }

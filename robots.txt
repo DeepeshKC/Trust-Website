@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# Add Sitemap after the official domain is connected.
+Sitemap: https://trust-website.deepeshkc.workers.dev/sitemap.xml

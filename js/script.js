@@ -95,13 +95,23 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("active");
       menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      menuToggle.setAttribute("aria-label", document.documentElement.lang === 'ne'
+        ? (isOpen ? 'नेभिगेसन बन्द गर्नुहोस्' : 'नेभिगेसन खोल्नुहोस्')
+        : (isOpen ? 'Close navigation' : 'Open navigation'));
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', document.documentElement.lang === 'ne' ? 'नेभिगेसन खोल्नुहोस्' : 'Open navigation');
+        menuToggle.focus();
+      }
     });
     navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
         menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.setAttribute("aria-label", document.documentElement.lang === 'ne' ? 'नेभिगेसन खोल्नुहोस्' : 'Open navigation');
       });
     });
   }
@@ -538,6 +548,9 @@ function setSiteLanguage(language) {
   document.querySelector('meta[name="description"]')?.setAttribute('content',desc);
   document.getElementById('og-title')?.setAttribute('content',title);
   document.getElementById('og-description')?.setAttribute('content',desc);
+  document.getElementById('og-locale')?.setAttribute('content', ne ? 'ne_NP' : 'en_US');
+  document.querySelector('meta[name="twitter:title"]')?.setAttribute('content',title);
+  document.querySelector('meta[name="twitter:description"]')?.setAttribute('content',desc);
   // Existing WhatsApp URL remains a working, pre-filled accommodation enquiry.
   const waText = ne
     ? 'नमस्ते बा आमा घर, मलाई आवासबारे जानकारी चाहिएको छ।\nआगमन मिति: \nप्रस्थान मिति: \nअतिथि सङ्ख्या: \nकृपया कोठाको उपलब्धता र शुल्क बताइदिनुहोला। धन्यवाद।'
@@ -552,7 +565,7 @@ function setSiteLanguage(language) {
   const chair = document.querySelector('.chairperson-feature figcaption span');
   if (chair) chair.textContent = ne ? 'अध्यक्ष' : 'Chairperson';
   const menu = document.getElementById('menu-toggle');
-  if (menu) menu.setAttribute('aria-label',ne?'नेभिगेसन खोल्नुहोस्':'Open navigation');
+  if (menu) menu.setAttribute('aria-label', ne ? (menu.getAttribute('aria-expanded') === 'true' ? 'नेभिगेसन बन्द गर्नुहोस्' : 'नेभिगेसन खोल्नुहोस्') : (menu.getAttribute('aria-expanded') === 'true' ? 'Close navigation' : 'Open navigation'));
   try { localStorage.setItem('baaAamaLanguage',lang); } catch(e) {}
 }
 document.addEventListener('DOMContentLoaded', () => {

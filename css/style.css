@@ -326,3 +326,13 @@ html[lang="ne"] .eyebrow { letter-spacing:.025em; }
 html[lang="ne"] .hero-copy,html[lang="ne"] .intro-text,html[lang="ne"] .stay-copy,html[lang="ne"] .contact-content { line-height:1.85; }
 @media(max-width:900px) { .header-inner { flex-wrap:wrap; } .language-switch { margin-left:auto; } }
 @media(max-width:680px) { .language-option { padding:7px 8px; font-size:12px; } }
+
+/* Accessibility: visible keyboard focus without altering mouse interactions. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid #205d87;
+  outline-offset: 4px;
+}
+.skip-link:focus-visible { left: 10px; outline: 3px solid #205d87; outline-offset: 2px; }
+@media (max-width: 767px) {
+  .menu-toggle { min-width: 44px; min-height: 44px; }
+}
